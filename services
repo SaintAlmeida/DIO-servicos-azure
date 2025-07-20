@@ -1,0 +1,41 @@
+# Serviço de Validação de CPF no Azure
+
+Este documento descreve o passo a passo para criar um serviço simples para validação de CPF utilizando os serviços do Microsoft Azure.
+
+---
+
+## Visão Geral
+
+O CPF (Cadastro de Pessoas Físicas) é um documento essencial para identificação de cidadãos no Brasil. Validar o CPF em aplicações é importante para garantir a integridade e evitar fraudes.
+
+Este projeto cria um serviço de validação de CPF hospedado no Azure, usando uma **Azure Function** com HTTP trigger, que recebe um CPF e retorna se ele é válido ou não.
+
+---
+
+## Tecnologias Utilizadas
+
+- [Azure Functions](https://learn.microsoft.com/azure/azure-functions/)
+- Azure CLI ou Portal Azure
+- Linguagem C# ou Python (exemplos em ambos)
+- GitHub (para versionamento e integração contínua, opcional)
+
+---
+
+## Passo a Passo
+
+### 1. Criar a Azure Function localmente
+
+#### a) Instale as ferramentas necessárias:
+
+- [Azure Functions Core Tools](https://learn.microsoft.com/azure/azure-functions/functions-run-local)
+- [.NET SDK](https://dotnet.microsoft.com/download) (se for usar C#)
+- [Python 3.8+](https://www.python.org/downloads/) (se for usar Python)
+
+#### b) Crie o projeto da função
+
+Para C#:
+
+```bash
+func init ValidadorCPF --dotnet
+cd ValidadorCPF
+func new --template "HTTP trigger" --name ValidarCpf
